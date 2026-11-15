@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ 
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>MOM</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="~/assets/img/favicon.png" rel="icon">
+    <link href="~/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="~/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="~/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="~/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="~/assets/css/style.css" rel="stylesheet">
+
+    <style>
+        .btn {
+            transition: all 0.2s ease-in-out;
+        }
+
+            .btn:hover {
+                transform: scale(1.05);
+                box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            }
+    </style>
+
+
+    <!-- =======================================================
+    * Template Name: MOM
+    * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+    * Updated: Apr 20 2024 with Bootstrap v5.3.3
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo d-flex align-items-center">
+                
+                <span class="d-none d-lg-block" style="font-family:'Montserrat', sans-serif; font-weight:600; letter-spacing:0px;">
+                    MOM
+                </span>
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div><!-- End Logo -->
+
+        <div class="search-bar">
+            <form class="search-form d-flex align-items-center" method="POST" action="#">
+                <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+            </form>
+        </div><!-- End Search Bar -->
+
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center">
+
+                <li class="nav-item d-block d-lg-none">
+                    <a class="nav-link nav-icon search-bar-toggle " href="#">
+                        <i class="bi bi-search"></i>
+                    </a>
+                </li><!-- End Search Icon-->
+
+              
+                </li><!-- End Messages Nav -->
+
+                <nav class="header-nav me-4">
+
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <img src="data:image/jpeg;base64,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" alt="Profile" class="rounded-circle">
+                        <span class="d-none d-md-block dropdown-toggle ps-2">Lamba Jay</span>
+                    </a><!-- End Profile Iamge Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                        <li class="dropdown-header">
+                            <h6>Lamba Jay</h6>
+                            <span>Web Designer</span>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <i class="bi bi-person"></i>
+                                <span>My Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <i class="bi bi-gear"></i>
+                                <span>Account Settings</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                                <i class="bi bi-question-circle"></i>
+                                <span>Need Help?</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Sign Out</span>
+                            </a>
+                        </li>
+
+                    </ul><!-- End Profile Dropdown Items -->
+                </li><!-- End Profile Nav -->
+
+            </ul>
+        </nav><!-- End Icons Navigation -->
+
+    </header><!-- End Header -->
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+
+            <li class="nav-item mb-3">
+                <a class="nav-link " asp-controller="Home" asp-action="Index">
+                    <i class="bi bi-grid"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li><!-- End Dashboard Nav -->
+
+            <li class="nav-item mb-3">
+                <a class="nav-link " asp-controller="Department" asp-action="DepartmentList">
+                    <i class="bi bi-grid"></i>
+                    <span>Department</span>
+                </a>
+            </li><!-- End Department Nav -->
+
+            <li class="nav-item mb-3">
+                <a class="nav-link " asp-controller="Meeting" asp-action="MeetingList">
+                    <i class="bi bi-grid"></i>
+                    <span>Meeting</span>
+                </a>
+            </li><!-- End Meeting Nav -->
+
+
+            <li class="nav-item mb-3">
+                <a class="nav-link " asp-controller="MeetingMember" asp-action="MeetingMemberList">
+                    <i class="bi bi-grid"></i>
+                    <span>MeetingMember</span>
+                </a>
+            </li><!-- End Meeting Nav -->
+
+            
+            <li class="nav-item mb-3">
+                <a class="nav-link " asp-controller="MeetingType" asp-action="MeetingTypeList">
+                    <i class="bi bi-grid"></i
+
+                    <span>MeetingType</span>
+                </a>
+            </li><!-- End MeetingType Nav -->
+
+            <li class="nav-item mb-3">
+                <a class="nav-link " asp-controller="MeetingVenue" asp-action="MeetingVenueList">
+                    <i class="bi bi-grid"></i>
+                    <span>MeetingVenue</span>
+                </a>
+            </li><!-- End MeetingVenue Nav -->
+
+            <li class="nav-item mb-3">
+                <a class="nav-link " asp-controller="Staff" asp-action="StaffList">
+                    <i class="bi bi-grid"></i>
+                    <span>Staff</span>
+                </a>
+            </li><!-- End Staff Nav -->
+
+        </ul>
+
+    </aside><!-- End Sidebar-->
+
+    <main id="main" class="main">
+
+       @RenderBody()
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="copyright">
+            &copy; Copyright <strong><span>MOM</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+            Designed by Lamba Jay
+        </div>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+   <!-- Vendor JS Files -->
+<script src="~/assets/vendor/apexcharts/apexcharts.min.js"></script>
+<script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="~/assets/vendor/chart.js/chart.umd.js"></script>
+<script src="~/assets/vendor/echarts/echarts.min.js"></script>
+<script src="~/assets/vendor/quill/quill.js"></script>
+<script src="~/assets/vendor/tinymce/tinymce.min.js"></script>
+<script src="~/assets/vendor/php-email-form/validate.js"></script>
+
+@RenderSection("Scripts", required:false)
+
+<script src="~/assets/js/main.js"></script>
+
+</body>
+
+</html>

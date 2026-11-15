@@ -1,0 +1,111 @@
+﻿@model IEnumerable<MOM.Models.DepartmentModel>
+
+
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+
+    
+    <h3 class="mb-0">Department List</h3>
+
+      <div class="d-flex gap-2">
+        <a asp-action="ExportToExcel" class="btn btn-success">
+            <i class="bi bi-file-earmark-excel"></i> Export to Excel
+        </a>
+
+        <a asp-action="DepartmentAddEdit" class="btn btn-primary">
+            <i class="bi bi-plus-circle"></i> Add
+        </a>
+    </div>
+
+</div>
+
+<hr />
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <p class="text-success">@TempData["SuccessMessage"]</p>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <p class="text-danger">@TempData["ErrorMessage"]</p>
+}
+
+<!--search -->
+
+<div class="card-body pb-0">
+
+    <form asp-action="DepartmentList" method="post" class="mb-3">
+
+        <div class="row g-2 align-items-center">
+
+            <div class="col-md-4">
+                <input type="text"
+                       name="SearchText"
+                       value="@ViewBag.SearchText"
+                       class="form-control"
+                       placeholder="Search Department Name..." />
+            </div>
+
+            <div class="col-auto">
+
+                <button type="submit" class="btn btn-primary">
+                    Search
+                </button>
+
+                <a asp-action="DepartmentList"  class="btn btn-secondary">
+                    Reset
+                </a>
+
+            </div>
+
+        </div>
+
+    </form>
+
+</div>
+
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <th>DepartmentID</th>
+            <th>Department Name</th>
+            <th>Created</th>
+            <th>Modified</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>@item.DepartmentID</td>
+
+                <td>@item.DepartmentName</td>
+
+                <td>@item.Created</td>
+
+                <td>@item.Modified</td>
+
+                <td>
+
+                    <a asp-action="DepartmentAddEdit"  asp-route-id="@item.DepartmentID" class="btn btn-outline-primary btn-sm">
+                        Edit
+                    </a>
+
+                    <a asp-action="Delete" asp-route-DepartmentID="@item.DepartmentID" class="btn btn-outline-danger btn-sm">
+                        Delete
+                    </a>
+
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+
+</table>

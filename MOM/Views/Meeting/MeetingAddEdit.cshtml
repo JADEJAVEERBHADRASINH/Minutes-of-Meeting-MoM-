@@ -1,0 +1,127 @@
+﻿@model MOM.Models.MeetingModel
+
+<div class="card">
+    <div class="card-body">
+
+        <h5 class="card-title">Add / Edit Meeting</h5>
+
+        <form asp-action="Save" asp-controller="Meeting" method="post" class="row g-3">
+
+           
+            <input type="hidden" asp-for="MeetingID" />
+
+            
+            <div class="col-md-4">
+
+                <label asp-for="MeetingTypeID" class="form-label">
+                    Meeting Type
+                </label>
+
+                <select asp-for="MeetingTypeID" class="form-control" asp-items="ViewBag.MeetingTypeList">
+
+                    <option value="">--- Select Meeting Type ---</option>
+
+                </select>
+
+                <span asp-validation-for="MeetingTypeID" class="text-danger"></span>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <label asp-for="MeetingVenueID"  class="form-label">
+                    Meeting Venue
+                </label>
+
+                <select asp-for="MeetingVenueID"  class="form-control" asp-items="ViewBag.MeetingVenueList">
+
+                    <option value="">--- Select Venue ---</option>
+
+                </select>
+
+                <span asp-validation-for="MeetingVenueID"  class="text-danger"></span>
+
+            </div>
+
+
+
+            <div class="col-md-4">
+
+                <label asp-for="DepartmentID" class="form-label">
+                    Department
+                </label>
+
+                <select asp-for="DepartmentID"  class="form-control"  asp-items="ViewBag.DepartmentList">
+
+                    <option value="">--- Select Department ---</option>
+
+                </select>
+
+                <span asp-validation-for="DepartmentID"  class="text-danger"></span>
+
+            </div>
+
+
+            <div class="col-md-6">
+
+                <label asp-for="MeetingDate" class="form-label"></label>
+
+                <input asp-for="MeetingDate" type="date" class="form-control" />
+
+                <span asp-validation-for="MeetingDate" class="text-danger"></span>
+
+            </div>
+
+
+
+            <div class="col-md-6">
+
+                <label asp-for="MeetingDescription" class="form-label">  </label>
+
+                <input asp-for="MeetingDescription"  class="form-control" placeholder="Enter Meeting Description" />
+
+                <span asp-validation-for="MeetingDescription" class="text-danger"></span>
+
+            </div>
+
+
+      
+
+            <div class="col-12">
+
+                <label asp-for="DocumentPath" class="form-label"> </label>
+
+                <input asp-for="DocumentPath" class="form-control" placeholder="Enter Document Path" />
+
+                <span asp-validation-for="DocumentPath" class="text-danger"></span>
+
+            </div>
+
+
+
+            <div class="text-center">
+
+                <button type="submit" class="btn btn-primary">
+                    Submit
+                </button>
+
+                <button type="reset" class="btn btn-secondary">
+                    Reset
+                </button>
+
+                <a asp-controller="Meeting" asp-action="MeetingList"  class="btn btn-outline-danger">
+                    Cancel
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}

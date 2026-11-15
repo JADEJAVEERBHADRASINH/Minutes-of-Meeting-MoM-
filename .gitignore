@@ -1,0 +1,36 @@
+## Visual Studio and .NET GitIgnore
+.vs/
+slnx.sqlite
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# Node / frontend (if any)
+node_modules/
+npm-debug.log
+
+# Log files
+*.log
+[Ll]og/
+[Ll]ogs/
+
+# OS generated files
+.DS_Store
+Thumbs.db
